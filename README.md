@@ -1,60 +1,77 @@
-# HousePrediction
-Using Random Forest Model
-# 🏠 Boston Housing Price Prediction API
+# 🏠 Boston Housing Price Prediction
 
-This project is a **machine learning web API** built using **Flask** that predicts house prices based on features from the Boston Housing dataset
-
-## 🌐 Live Demo
-
-🔗 [Visit Deployed App on Render](https://boston-housing-model-api.onrender.com)
-
-## 🧠 Model Inputs
-
-The model expects these 13 features:
-
-| Feature    | Description                                                 |
-|------------|-------------------------------------------------------------|
-| `crim`     | Per capita crime rate by town                              |
-| `zn`       | Proportion of residential land zoned for large lots        |
-| `indus`    | Proportion of non-retail business acres                     |
-| `chas`     | Charles River dummy variable (0 or 1)                       |
-| `nox`      | Nitric oxide concentration                                  |
-| `rm`       | Average number of rooms per dwelling                        |
-| `age`      | Proportion of owner-occupied units built before 1940        |
-| `dis`      | Weighted distances to employment centers                    |
-| `rad`      | Accessibility to radial highways                            |
-| `tax`      | Property-tax rate per $10,000                               |
-| `ptratio`  | Pupil-teacher ratio by town                                 |
-| `b`        | Racial composition factor                                   |
-| `lstat`    | % of lower status of the population                         |
+A Flask-based machine learning web app that predicts house prices based on various neighborhood and housing features from the Boston Housing dataset.
 
 ---
 
-## 🔄 API Usage
+## 📌 Features
 
-### ▶️ POST `/predict`
+✅ Predicts median house price (`medv`) using 13 input features  
+✅ Interactive UI to input features and get predictions  
+✅ REST API endpoint for programmatic access  
+✅ Trained using `Random Forest` from `scikit-learn`  
+✅ Deployable to platforms like **Render**, **Heroku**, or any VPS
 
-#### 📤 Request Body (JSON):
-```json
-{
-  "crim": 0.2,
-  "zn": 0.0,
-  "indus": 7.0,
-  "chas": 0,
-  "nox": 0.5,
-  "rm": 6.2,
-  "age": 45.0,
-  "dis": 4.0,
-  "rad": 4,
-  "tax": 300,
-  "ptratio": 15.5,
-  "b": 390.0,
-  "lstat": 12.5
-}
+---
 
-{
-  "prediction": 24.37
-}
+## 🧠 Machine Learning Model
 
+This app uses a **Linear Regression** model trained on the following features:
+
+- `rm` – Average number of rooms per dwelling  
+- `age` – Proportion of owner-occupied units built prior to 1940  
+- `ptratio` – Pupil-teacher ratio by town  
+- `lstat` – % lower status of the population  
+- `b` – 1000(Bk - 0.63)^2 where Bk is the proportion of Black people by town  
+- `tax` – Property tax rate per $10,000  
+- `rad` – Index of accessibility to radial highways  
+- `dis` – Weighted distances to five Boston employment centers  
+- `crim` – Per capita crime rate by town  
+- `zn` – Proportion of residential land zoned for lots over 25,000 sq. ft.  
+- `indus` – Proportion of non-retail business acres per town  
+- `nox` – Nitric oxide concentration  
+- `chas` – Charles River dummy variable (1 if tract bounds river; 0 otherwise)
+
+---
+
+## 🚀 Live Demo
+
+> You can deploy the app to Render and link it here:
+> https://dashboard.render.com/web/new
+
+---
+
+## 📁 Folder Structure
+
+house_prediction/
+├── app.py
+├── BostonHousing.csv
+├── model.pkl
+├── requirements.txt
+├── templates/
+│ └── form.html
+
+
+---
+
+## 🖥️ Local Setup Instructions
+
+1. **Clone the repo**  
+```bash
+git clone https://github.com/your-username/house_prediction.git
+cd house_prediction
+
+## install dependies
+pip install -r requirements.txt
+
+---
+
+## run app
+python app.py
+
+---
+
+## Open browser
+Go to http://127.0.0.1:5000
 
 

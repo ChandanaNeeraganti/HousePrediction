@@ -51,12 +51,10 @@ The model expects these 13 features:
   "b": 390.0,
   "lstat": 12.5
 }
-## response
+
 {
   "prediction": 24.37
 }
 
 
-Deployed App: https://boston-housing-model-api.onrender.com
-GitHub Repo: https://github.com/ChandanaNeeraganti/house_prediction
 

@@ -56,7 +56,7 @@ The model expects these 13 features:
   "prediction": 24.37
 }
 
-###The app is deployed on Render using:
+
 Deployed App: https://boston-housing-model-api.onrender.com
 GitHub Repo: https://github.com/ChandanaNeeraganti/house_prediction
 
